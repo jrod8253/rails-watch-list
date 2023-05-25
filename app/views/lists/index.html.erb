@@ -1,0 +1,13 @@
+<h1>List Index</h1>
+
+<div class="container">
+
+<h4>All Lists</h4>
+<ul>
+  <% @list.each do |i| %>
+    <li><%= link_to i.name, list_path(i) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New List", new_list_path, class: "btn btn-primary" %>
+</div>
