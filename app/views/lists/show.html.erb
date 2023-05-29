@@ -1,10 +1,35 @@
-<h1>Show individual list</h1>
+  <div class="banner" style="background-image: url('<%= image_path "vhs.jpg" %>');">
+    <div class="container">
+      <div class="banner-center">
+        <h1><%= @list.name.capitalize %></h1>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
-<p><%= @list.name %></p>
+<div class="container mb-5">
+    <div class="row">
+      <% @list.movies.each do |movie| %>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <div class="col-md-4 col-sm-6">
+          <div class="movie-poster">
+              <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img object-fit-cover" %>
+              <div class="movie-content">
+                <h6><%= movie.title %> • <%= movie.rating %> ⭐️</h6>
+                <p><%= movie.overview %></p>
+              </div>
+              <div class="movie-bookmark-content">
+                <%= bookmark.comment %>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
 
-<%= link_to "All Lists", lists_path, class: "btn btn-primary" %>
-<%= link_to "New Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
-<%= link_to "delete this list", list_path(@list), class: "btn btn-primary", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
-
+<div class="container mb-5">
+  <div class="footer">
+    <%= link_to "All Lists", lists_path, class: "btn btn-primary" %>
+    <%= link_to "New Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+    <%= link_to "Delete list", list_path(@list), class: "btn btn-primary", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+  </div>
 </div>

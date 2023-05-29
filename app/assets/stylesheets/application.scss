@@ -10,3 +10,52 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.banner {
+  color: $white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-center {
+  text-align: center;
+  background-color: $primary;
+  border-radius: $border-radius-round;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.list-card {
+  height: 175px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  border-radius: $border-radius-round;
+  justify-content: center;
+  color: $white;
+  font-size: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.movie-img {
+  height: 175px;
+  object-fit: cover;
+}
+
+.movie-content p {
+  font-size: small;
+}
+
+.movie-poster {
+
+}
