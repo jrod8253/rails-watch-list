@@ -11,6 +11,10 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  font-family: 'Inconsolata', monospace;
+}
+
 .banner {
   color: $white;
   height: 300px;
@@ -20,12 +24,20 @@
   margin-bottom: 50px;
   background-size: cover;
   background-position: center;
+  font-family: 'Inconsolata', monospace;
 }
 
 .banner-center {
   text-align: center;
   background-color: $primary;
-  border-radius: $border-radius-round;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 10px 10px 0px black;
+  border: 2px solid white;
+  padding: 20px 0;
 }
 
 .nav-item {
@@ -33,18 +45,24 @@
 }
 
 .list-card {
-  height: 175px;
+  height: 250px;
   display: flex;
   align-items: center;
   background-size: cover;
   background-position: center;
   text-align: center;
-  border-radius: $border-radius-round;
   justify-content: center;
   color: $white;
   font-size: 30px;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
+  opacity: 0.8;
+  box-shadow: 10px 10px 0px lightslategray;
+  border: 3px solid black;
+}
+
+.list-card:hover {
+  transform: scale(1.05);
 }
 
 .movie-img {
@@ -56,6 +74,9 @@
   font-size: small;
 }
 
-.movie-poster {
-
+.new-form {
+  width: 700px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 100px;
 }

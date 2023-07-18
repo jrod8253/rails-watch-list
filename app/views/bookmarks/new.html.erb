@@ -1,10 +1,11 @@
-<h1>Create new Bookmark</h1>
-
-<div class="container">
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :list %>
-    <%= f.association :movie %>
-    <%= f.input :comment %>
-    <%= f.submit %>
-  <% end %>
+<div class="new-form">
+  <h1>Create new Bookmark</h1>
+  <div class="container">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :list %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
